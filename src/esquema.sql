@@ -1,5 +1,10 @@
+DROP TABLE promocoes CASCADE ;
+DROP TABLE item CASCADE ;
+DROP TABLE promocoes CASCADE ;
+DROP TABLE prodPromo CASCADE ;
+
 CREATE TABLE IF NOT EXISTS produto(
-  id    SERIAL PRIMARY KEY,
+  id    INTEGER PRIMARY KEY NOT NULL ,
   nome  CHARACTER VARYING(15) NOT NULL,
   valor NUMERIC               NOT NULL,
   UNIQUE (nome)
@@ -13,7 +18,7 @@ CREATE TABLE IF NOT EXISTS item (
 );
 
 CREATE TABLE IF NOT EXISTS promocoes(
-  id            SERIAL PRIMARY KEY,
+  id            INTEGER PRIMARY KEY NOT NULL ,
   quantidade    INTEGER NOT NULL,
   valordesconto INTEGER,
   pague         INTEGER,

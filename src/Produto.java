@@ -2,24 +2,34 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Produto {
-    private Codigo codigo;
+    private Integer id;
+    private String codigo;
     private BigDecimal valor;
     private ArrayList<Promocao>promo = new ArrayList<>();
 
     Produto(){
 
     }
-    Produto(Codigo codigo , BigDecimal valor){
+    Produto(Integer id, String codigo , BigDecimal valor){
+        this.id = id;
         this.valor = valor;
         this.codigo = codigo;
     }
 
 
-    public Codigo getCodigo() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Codigo codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -41,6 +51,10 @@ public class Produto {
         }
 
         return desconto;
+    }
+
+    public ArrayList getPromolist(){
+        return promo;
     }
 
     public void addPromo(Promocao promocao){

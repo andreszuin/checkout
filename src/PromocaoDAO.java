@@ -9,14 +9,14 @@ public class PromocaoDAO{
         conex.conexao();
         ArrayList<Promocao> promos = new ArrayList<>();
         try{
-            conex.executa("select * from promocao where idproduto='"+idprod+"'");
+            conex.executa("select * from prodPromo INNER JOIN promocoes ON prodPromo.promocao = promocoes.id where prodpromo.idproduto='"+idprod+"'");
             while(conex.rs.next()){
                 if(conex.rs.getString("tipo").equals("xy")){
-                    PromocaoXporY xy = new PromocaoXporY(conex.rs.getInt("quantidade"),conex.rs.getInt("pague"));
+                    PromocaoXporY xy = new PromocaoXporY(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("pague"));
                     promos.add(xy);
                 }
                 else{
-                    PromocaoValor pv = new PromocaoValor(conex.rs.getInt("quantidade"),conex.rs.getInt("valordesconto"));
+                    PromocaoValor pv = new PromocaoValor(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("valordesconto"));
                     promos.add(pv);
                 }
             }
