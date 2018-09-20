@@ -66,6 +66,8 @@ public class ProdutoDAO{
             PreparedStatement pst = conex.conn.prepareStatement("delete from produto where id=?");
             pst.setInt(1,produto.getId());
             pst.execute();
+            ProdPromoDAO prodPromoDAO = new ProdPromoDAO();
+            prodPromoDAO.delete(produto.getId());
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null,"Erro ao excluir dados\nInforme o seguinte erro ao suporte:\n"+ex, "Erro", JOptionPane.ERROR_MESSAGE);
         }

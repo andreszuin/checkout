@@ -16,4 +16,16 @@ public class ProdPromoDAO {
         }
         conex.desconnect();
     }
+
+    public void delete(Integer id){
+        conex.conexao();
+        try {
+            PreparedStatement pst = conex.conn.prepareStatement("delete from prodpromo where idproduto=?");
+            pst.setInt(1,id);
+            pst.execute();
+        }catch(SQLException ex){
+            JOptionPane.showMessageDialog(null,"Erro ao excluir dados\nInforme o seguinte erro ao suporte:\n"+ex, "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+        conex.desconnect();
+    }
 }
