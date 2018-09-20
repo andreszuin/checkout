@@ -1,10 +1,9 @@
 
 public class Main {
-
+    //fredpolicarpo@zgsolucoes.com.br
     public static void main(String[] args){
-        Conecta conex = new Conecta();
-        conex.conexao();
-        conex.desconnect();
+        Bootstrap b = new Bootstrap();
+        b.criar();
     }
 
 }
