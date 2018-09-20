@@ -13,92 +13,92 @@ public class CaixaTest {
     @Test    
     public void teste1() {
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),50,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),50,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),100,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),100,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),130,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),130,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),180,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),180,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),230,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),230,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),260,0);
-        assertEquals(caixa.getTotalDiscount(),40,0);
+        assertEquals(caixa.getTotalPrice().intValue(),260,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),40,0);
         caixa.remove("A");
-        assertEquals(caixa.getTotalPrice(),230,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),230,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
     }
     
     @Test
     public void teste2() {
         caixa.add("D");
-        assertEquals(caixa.getTotalPrice(),15,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),15,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),65,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),65,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("B");
-        assertEquals(caixa.getTotalPrice(),95,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),95,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),145,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),145,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("B");
-        assertEquals(caixa.getTotalPrice(),160,0);
-        assertEquals(caixa.getTotalDiscount(),15,0);
+        assertEquals(caixa.getTotalPrice().intValue(),160,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),15,0);
         caixa.add("A");
-        assertEquals(caixa.getTotalPrice(),190,0);
-        assertEquals(caixa.getTotalDiscount(),35,0);
+        assertEquals(caixa.getTotalPrice().intValue(),190,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),35,0);
         caixa.remove("A");
-        assertEquals(caixa.getTotalPrice(),160,0);
-        assertEquals(caixa.getTotalDiscount(),15,0);
+        assertEquals(caixa.getTotalPrice().intValue(),160,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),15,0);
         caixa.remove("B");
-        assertEquals(caixa.getTotalPrice(),145,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),145,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
     }
 
     @Test
     public void teste3() {
         caixa.add("C");
-        assertEquals(caixa.getTotalPrice(),20,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),20,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("C");
-        assertEquals(caixa.getTotalPrice(),40,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),40,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("C");
-        assertEquals(caixa.getTotalPrice(),40,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),40,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.add("C");
-        assertEquals(caixa.getTotalPrice(),60,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),60,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.remove("C");
-        assertEquals(caixa.getTotalPrice(),40,0);
-        assertEquals(caixa.getTotalDiscount(),20,0);
+        assertEquals(caixa.getTotalPrice().intValue(),40,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),20,0);
         caixa.remove("C");
-        assertEquals(caixa.getTotalPrice(),40,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),40,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
     }
 
     @Test
     public void teste4() {
         caixa.add("C");
-        assertEquals(caixa.getTotalPrice(),20,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),20,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("B");
-        assertEquals(caixa.getTotalPrice(),50,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),50,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
         caixa.add("B");
-        assertEquals(caixa.getTotalPrice(),65,0);
-        assertEquals(caixa.getTotalDiscount(),15,0);
+        assertEquals(caixa.getTotalPrice().intValue(),65,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),15,0);
         caixa.remove("B");
-        assertEquals(caixa.getTotalPrice(),50,0);
-        assertEquals(caixa.getTotalDiscount(),0,0);
+        assertEquals(caixa.getTotalPrice().intValue(),50,0);
+        assertEquals(caixa.getTotalDiscount().intValue(),0,0);
     }
 
 
