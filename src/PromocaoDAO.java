@@ -3,7 +3,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class PromocaoDAO{
+public class PromocaoDAO implements DAO{
     private Conecta conex = new Conecta();
     private Promocao promocao;
 
@@ -49,8 +49,9 @@ public class PromocaoDAO{
     }
 
 
-    public void update(Promocao promocao) {
+    public void update(Object object) {
         conex.conexao();
+        promocao = ((Promocao)object);
         try{
             if(promocao instanceof PromocaoXporY){
                 PreparedStatement pst = conex.conn.prepareStatement("update promocoes set quantidade=?, pague=? where id=? ");
@@ -74,8 +75,9 @@ public class PromocaoDAO{
     }
 
 
-    public void insert(Promocao promocao) {
+    public void insert(Object object) {
         conex.conexao();
+        promocao = ((Promocao)object);
         try{
             if(promocao instanceof PromocaoXporY){
                 PreparedStatement pst = conex.conn.prepareStatement("insert into promocoes(id,quantidade,pague,tipo)values(?,?,?,?)");
@@ -100,8 +102,9 @@ public class PromocaoDAO{
     }
 
 
-    public void delete(Promocao promocao) {
+    public void delete(Object object) {
         conex.conexao();
+        promocao = ((Promocao)object);
         try {
             PreparedStatement pst = conex.conn.prepareStatement("delete from promocoes where id=?");
             pst.setInt(1,promocao.getId());

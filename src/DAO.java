@@ -1,6 +1,6 @@
 public interface DAO {
-    Produto search(String nome);
-    void update(Produto produto);
-    void insert(Produto produto);
-    void delete(Produto produto);
+    Object search(Integer id);
+    void update(Object x);
+    void insert(Object x);
+    void delete(Object x);
 }

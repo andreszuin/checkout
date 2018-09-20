@@ -3,8 +3,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class ProdutoDAO{
+public class ProdutoDAO implements DAO{
     Conecta conex = new Conecta();
+    Produto produto;
 
     public Produto search(Integer id) {
         conex.conexao();
@@ -25,8 +26,9 @@ public class ProdutoDAO{
     }
 
 
-    public void update(Produto produto) {
+    public void update(Object object) {
         conex.conexao();
+        produto = ((Produto)object);
         try{
             PreparedStatement pst = conex.conn.prepareStatement("update produto set nome=?,valor=? where id=? ");
             pst.setBigDecimal(2,produto.getValor());
@@ -40,8 +42,9 @@ public class ProdutoDAO{
     }
 
 
-    public void insert(Produto produto) {
+    public void insert(Object object) {
         conex.conexao();
+        produto = ((Produto)object);
         try{
             PreparedStatement pst = conex.conn.prepareStatement("insert into produto(id, nome, valor)values(?,?,?)");
             pst.setInt(1,produto.getId());
@@ -60,8 +63,9 @@ public class ProdutoDAO{
     }
 
 
-    public void delete(Produto produto) {
+    public void delete(Object object) {
         conex.conexao();
+        produto = ((Produto)object);
         try {
             PreparedStatement pst = conex.conn.prepareStatement("delete from produto where id=?");
             pst.setInt(1,produto.getId());
