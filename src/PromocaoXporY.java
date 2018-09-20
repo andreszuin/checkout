@@ -18,4 +18,24 @@ public class PromocaoXporY implements Promocao {
     public Integer getId() {
         return id;
     }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Integer getPague() {
+        return pague;
+    }
+
+    public void setPague(Integer pague) {
+        this.pague = pague;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

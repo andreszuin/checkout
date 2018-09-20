@@ -18,4 +18,24 @@ public class PromocaoValor implements Promocao {
     public Integer getId() {
         return id;
     }
+
+    public Integer getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Integer getValorDesconto() {
+        return valorDesconto;
+    }
+
+    public void setValorDesconto(Integer valorDesconto) {
+        this.valorDesconto = valorDesconto;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 }

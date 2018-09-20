@@ -60,11 +60,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ProdutoDAO.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProdutoDAO.java" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Documents/checkout/src/ProdutoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+            <state relative-caret-position="268">
+              <caret line="71" column="27" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="71" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1537473110595" expanded="true" signature="1074:1118" ph="update produto... " />
@@ -75,25 +75,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Arquivo_dados_checkout.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Documents/checkout/Arquivo_dados_checkout.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PromocaoDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PromocaoDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
+            <state relative-caret-position="482">
+              <caret line="107" column="33" lean-forward="false" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1265#1266#0" expanded="true" />
-                <element signature="e#1292#1293#0" expanded="true" />
+                <marker date="1537474771499" expanded="true" signature="2273:2326" ph="update promocoes... " />
+                <marker date="1537474771499" expanded="true" signature="2707:2767" ph="update promocoes... " />
+                <marker date="1537474771499" expanded="true" signature="3463:3525" ph="insert into promocoes... " />
+                <marker date="1537474771499" expanded="true" signature="3927:3997" ph="insert into promocoes... " />
+                <marker date="1537474771499" expanded="true" signature="4659:4691" ph="delete from promocoes... " />
               </folding>
             </state>
           </provider>
@@ -102,8 +95,8 @@
       <file leaf-file-name="esquema.sql" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Documents/checkout/src/esquema.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="36" />
+            <state relative-caret-position="192">
+              <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -158,13 +151,13 @@
         <option value="$PROJECT_DIR$/src/esquema.sql" />
         <option value="$USER_HOME$/Documents/checkout/src/CaixaTest.java" />
         <option value="$USER_HOME$/Documents/checkout/src/esquema.sql" />
-        <option value="$USER_HOME$/Documents/checkout/src/PromocaoDAO.java" />
         <option value="$USER_HOME$/Documents/checkout/src/ProdPromoDAO.java" />
         <option value="$USER_HOME$/Documents/checkout/src/Produto.java" />
         <option value="$USER_HOME$/Documents/checkout/src/Promocao.java" />
-        <option value="$USER_HOME$/Documents/checkout/src/PromocaoValor.java" />
-        <option value="$USER_HOME$/Documents/checkout/src/PromocaoXporY.java" />
         <option value="$USER_HOME$/Documents/checkout/src/ProdutoDAO.java" />
+        <option value="$USER_HOME$/Documents/checkout/src/PromocaoXporY.java" />
+        <option value="$USER_HOME$/Documents/checkout/src/PromocaoValor.java" />
+        <option value="$USER_HOME$/Documents/checkout/src/PromocaoDAO.java" />
       </list>
     </option>
   </component>
@@ -489,7 +482,7 @@
       <workItem from="1537383133883" duration="5700000" />
       <workItem from="1537455314596" duration="3411000" />
       <workItem from="1537463483565" duration="3731000" />
-      <workItem from="1537467996541" duration="4724000" />
+      <workItem from="1537467996541" duration="6381000" />
     </task>
     <servers />
   </component>
@@ -526,7 +519,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33154000" />
+    <option name="totallyTimeSpent" value="34811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1318" height="784" extended-state="6" />
@@ -613,8 +606,11 @@
           <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
+            <marker date="1537474771499" expanded="true" signature="2273:2326" ph="update promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="2707:2767" ph="update promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="3463:3525" ph="insert into promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="3927:3997" ph="insert into promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="4659:4691" ph="delete from promocoes... " />
           </folding>
         </state>
       </provider>
@@ -945,28 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoXporY.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="16" column="13" lean-forward="true" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding>
-            <element signature="e#561#562#0" expanded="true" />
-            <element signature="e#586#587#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoValor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#699#700#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/checkout/src/ProdPromoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1004,14 +978,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/checkout/src/esquema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/checkout/Arquivo_dados_checkout.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1020,27 +986,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoDAO.java">
+    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoXporY.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="30" column="20" lean-forward="false" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="20" />
+        <state relative-caret-position="344">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-            <element signature="e#1292#1293#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#754#755#0" expanded="true" />
+            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#815#816#0" expanded="true" />
+            <element signature="e#858#859#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+            <element signature="e#957#958#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoValor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="21" column="36" lean-forward="false" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+          <folding>
+            <element signature="e#674#675#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#770#771#0" expanded="true" />
+            <element signature="e#823#824#0" expanded="true" />
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#944#945#0" expanded="true" />
+            <element signature="e#1003#1004#0" expanded="true" />
+            <element signature="e#1053#1054#0" expanded="true" />
+            <element signature="e#1090#1091#0" expanded="true" />
+            <element signature="e#1118#1119#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/checkout/src/esquema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="21" column="8" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Documents/checkout/src/ProdutoDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        <state relative-caret-position="268">
+          <caret line="71" column="27" lean-forward="true" selection-start-line="63" selection-start-column="8" selection-end-line="71" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1537473110595" expanded="true" signature="1074:1118" ph="update produto... " />
             <marker date="1537473110595" expanded="true" signature="1670:1719" ph="insert into produto... " />
             <marker date="1537473110595" expanded="true" signature="2500:2530" ph="delete from produto... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/checkout/src/PromocaoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="107" column="33" lean-forward="false" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1537474771499" expanded="true" signature="2273:2326" ph="update promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="2707:2767" ph="update promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="3463:3525" ph="insert into promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="3927:3997" ph="insert into promocoes... " />
+            <marker date="1537474771499" expanded="true" signature="4659:4691" ph="delete from promocoes... " />
           </folding>
         </state>
       </provider>
