@@ -2,15 +2,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Caixa {
-    private PromocaoValor prodA = new PromocaoValor(3,130);
-    private PromocaoValor prodB = new PromocaoValor(2,45);
-    private PromocaoXporY prodC = new PromocaoXporY(3,2);
-    private PromocaoXporY prodD = new PromocaoXporY(1,1);
+    private PromocaoValor prodA = new PromocaoValor(1,3,130);
+    private PromocaoValor prodB = new PromocaoValor(2,2,45);
+    private PromocaoXporY prodC = new PromocaoXporY(3,3,2);
+    private PromocaoXporY prodD = new PromocaoXporY(4,1,1);
     private Produto X = new Produto();
-    private Produto A = new Produto(Codigo.A, BigDecimal.valueOf(50));
-    private Produto B = new Produto(Codigo.B,BigDecimal.valueOf(30));
-    private Produto C = new Produto(Codigo.C,BigDecimal.valueOf(20));
-    private Produto D = new Produto(Codigo.D,BigDecimal.valueOf(15));
+    private Produto A = new Produto(1,"A", BigDecimal.valueOf(50));
+    private Produto B = new Produto(2,"B",BigDecimal.valueOf(30));
+    private Produto C = new Produto(3,"C",BigDecimal.valueOf(20));
+    private Produto D = new Produto(4,"D",BigDecimal.valueOf(15));
 
     Caixa(){
         A.addPromo(prodA);

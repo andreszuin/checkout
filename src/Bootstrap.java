@@ -7,11 +7,7 @@ public class Bootstrap {
     public void criar(){
         conex.conexao();
         try{
-            PreparedStatement pst = conex.conn.prepareStatement("DROP TABLE promocoes CASCADE ;\n" +
-                    "DROP TABLE item CASCADE ;\n" +
-                    "DROP TABLE promocoes CASCADE ;\n" +
-                    "DROP TABLE prodPromo CASCADE ;\n" +
-                    "\n" +
+            PreparedStatement pst = conex.conn.prepareStatement(
                     "CREATE TABLE IF NOT EXISTS produto(\n" +
                     "  id    INTEGER PRIMARY KEY NOT NULL ,\n" +
                     "  nome  CHARACTER VARYING(15) NOT NULL,\n" +

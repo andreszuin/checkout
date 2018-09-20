@@ -7,27 +7,29 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 public class Csvreader {
     public void read()throws IOException{
+        PromocaoDAO promocaoDAO = new PromocaoDAO();
         try (
-                Reader reader = Files.newBufferedReader(Paths.get("promoções.csv"));
+                Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\miner\\Documents\\checkout\\promoções.csv"));
                 CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
                         .withFirstRecordAsHeader()
                         .withIgnoreHeaderCase()
                         .withTrim());
-        ) {
+        ){
             for (CSVRecord csvRecord : csvParser) {
                 // Accessing values by Header names
-                String name = csvRecord.get("Name");
-                String email = csvRecord.get("Email");
-                String phone = csvRecord.get("Phone");
-                String country = csvRecord.get("Country");
+                String id = csvRecord.get("id");
+                String qtd_ativacao = csvRecord.get("qtde_ativacao");
+                String preco_final = csvRecord.get("preco_final");
+                String qtd_paga = csvRecord.get("qtd_paga");
 
-                System.out.println("Record No - " + csvRecord.getRecordNumber());
-                System.out.println("---------------");
-                System.out.println("Name : " + name);
-                System.out.println("Email : " + email);
-                System.out.println("Phone : " + phone);
-                System.out.println("Country : " + country);
-                System.out.println("---------------\n\n");
+                if(preco_final.equals("")){
+                    PromocaoXporY xy = new PromocaoXporY(Integer.valueOf(id),Integer.valueOf(qtd_ativacao),Integer.valueOf(qtd_paga));
+                    promocaoDAO.insert(xy);
+                }
+                else{
+                    PromocaoValor pv = new PromocaoValor(Integer.valueOf(id),Integer.valueOf(qtd_ativacao),Integer.valueOf(preco_final));
+                    promocaoDAO.insert(pv);
+                }
             }
     }
 }}
