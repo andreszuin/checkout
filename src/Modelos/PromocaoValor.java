@@ -1,8 +1,10 @@
+package Modelos;
+
 import java.math.BigDecimal;
 
 public class PromocaoValor implements Promocao {
     private Integer quantidade,valorDesconto,id;
-    PromocaoValor(Integer id, Integer quantidade, Integer valorDesconto){
+    public PromocaoValor(Integer id, Integer quantidade, Integer valorDesconto){
         this.quantidade =quantidade;
         this.id = id;
         this.valorDesconto = valorDesconto;

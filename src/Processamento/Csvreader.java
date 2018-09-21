@@ -1,3 +1,8 @@
+package Processamento;
+import Modelos.*;
+import DAOS.PromocaoDAO;
+import Modelos.PromocaoValor;
+import Modelos.PromocaoXporY;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;

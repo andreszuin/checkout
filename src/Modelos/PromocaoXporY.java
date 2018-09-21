@@ -1,8 +1,11 @@
+package Modelos;
+
 import java.math.BigDecimal;
 
 public class PromocaoXporY implements Promocao {
     private Integer quantidade, pague, id;
-    PromocaoXporY(Integer id, Integer leve, Integer pague){
+
+    public PromocaoXporY(Integer id, Integer leve, Integer pague){
         this.quantidade = leve;
         this.id = id;
         this.pague = pague;

@@ -1,3 +1,5 @@
+package DAOS;
+
 public interface DAO {
     Object search(Integer id);
     void update(Object x);

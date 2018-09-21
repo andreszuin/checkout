@@ -1,3 +1,8 @@
+import Modelos.Item;
+import Modelos.Produto;
+import Modelos.PromocaoValor;
+import Modelos.PromocaoXporY;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -20,9 +25,6 @@ public class Caixa {
     }
 
     ArrayList<Item> itens = new ArrayList<>();
-    public void entrada(String entrada){
-
-    }
 
     public void add(String input){
         X = teste(input);

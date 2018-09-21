@@ -1,3 +1,5 @@
+package Modelos;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 
@@ -7,10 +9,10 @@ public class Produto {
     private BigDecimal valor;
     private ArrayList<Promocao>promo = new ArrayList<>();
 
-    Produto(){
+    public Produto(){
 
     }
-    Produto(Integer id, String codigo , BigDecimal valor){
+    public Produto(Integer id, String codigo , BigDecimal valor){
         this.id = id;
         this.valor = valor;
         this.codigo = codigo;
@@ -43,7 +45,9 @@ public class Produto {
 
     public BigDecimal getPromo(Item i) {
         BigDecimal desconto = BigDecimal.valueOf(0);
-
+        if(promo.equals(null)){
+            return BigDecimal.ZERO;
+        }
         for (Promocao p : promo){
             if(p.desconto(i).compareTo(desconto)== 1){
                 desconto = p.desconto(i);

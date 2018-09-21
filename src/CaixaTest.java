@@ -1,13 +1,11 @@
+import Processamento.Regex;
 import org.junit.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.Assert.*;
-//edunvk@gmail.com
 public class CaixaTest {
     Caixa caixa = new Caixa();
     @Test    
