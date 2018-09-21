@@ -1,7 +1,4 @@
-import DAOS.PromocaoDAO;
-import Modelos.PromocaoXporY;
-import Processamento.Csvreader;
-import Processamento.Regex;
+
 import Startup.Bootstrap;
 
 import java.io.IOException;
