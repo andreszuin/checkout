@@ -62,9 +62,6 @@ public class Bootstrap {
     }
 
     public void preencher() throws IOException {
-        /*PromocaoXporY xy =  new PromocaoXporY(0,1,1);
-        PromocaoDAO promocaoDAO = new PromocaoDAO();
-        promocaoDAO.insert(xy);*/
         Csvreader c = new Csvreader();
         c.read();
         Regex r = new Regex();

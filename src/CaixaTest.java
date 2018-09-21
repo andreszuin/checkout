@@ -32,6 +32,7 @@ public class CaixaTest {
         assertEquals(caixa.getTotalDiscount().equals(BigDecimal.valueOf(0)),true);
         caixa.add(21);
         System.out.println(caixa.getTotalPrice());
+        System.out.println(BigDecimal.valueOf(88.89210530));
         assertEquals(caixa.getTotalPrice().equals(BigDecimal.valueOf(88.89210530)),true);
         assertEquals(caixa.getTotalDiscount().equals(BigDecimal.valueOf(0)),true);
         caixa.add(21);
