@@ -1,13 +1,28 @@
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Regex {
-    public List<String> getResult(String regex, String text){
+
+    public void getResult(String regex, String text){
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        while(matcher.find()){
+            String participantName = matcher.group();
+            Produto produto = new Produto(Integer.valueOf(matcher.group(1)),matcher.group(2), new BigDecimal(matcher.group(3)));
+            PromocaoDAO promocaoDAO = new PromocaoDAO();
+            produto.addPromo(promocaoDAO.search(Integer.valueOf(matcher.group(4))));
+            ProdutoDAO produtoDAO = new ProdutoDAO();
+            produtoDAO.insert(produto);
+        }
+    }
+
+    /*public List<String> getResult(String regex, String text){
         List<String> lista = new ArrayList<>();
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
@@ -16,7 +31,7 @@ public class Regex {
             lista.add(participantName);
         }
         return lista;
-    }
+    }*/
 
     public String FiletoString(String path) throws IOException{
         File texto = new File(path);
@@ -25,7 +40,6 @@ public class Regex {
         fis.read(bytes);
         fis.close();
         String resultado = new String(bytes);
-        System.out.println(resultado);
         return resultado;
     }
 }

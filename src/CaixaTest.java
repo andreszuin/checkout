@@ -104,15 +104,14 @@ public class CaixaTest {
 
     @Test
     public void testeRegex() throws IOException {
-        File texto = new File("promoções.csv");
+        File texto = new File("Arquivo_dados_checkout.txt");
         byte[] bytes = new byte[(int) texto.length()];
         FileInputStream fis = new FileInputStream(texto);
         fis.read(bytes);
         fis.close();
         String comandos = new String(bytes);
         Regex reg = new Regex();
-        List<String> esperado = Arrays.asList("1","2","3");
-        System.out.println(comandos);
-        assertEquals(reg.getResult("\\d",comandos),esperado);
+        String regex = "((?<=id: )\\d+(?=|))(?:.+)((?<=descricao: )\\w+(?=|))(?:.+)((?<=valor: )\\d+.\\d+(?=|))(?:.+)((?<=promocao: )\\d(?=|))";
+        reg.getResult(regex,comandos);
     }
 }

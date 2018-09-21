@@ -1,7 +1,7 @@
-DROP TABLE promocoes CASCADE ;
-DROP TABLE item CASCADE ;
-DROP TABLE promocoes CASCADE ;
-DROP TABLE prodPromo CASCADE ;
+DROP TABLE promocoes;
+DROP TABLE item;
+DROP TABLE promocoes;
+DROP TABLE prodPromo;
 
 CREATE TABLE IF NOT EXISTS produto(
   id    INTEGER PRIMARY KEY NOT NULL ,

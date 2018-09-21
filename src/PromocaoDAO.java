@@ -32,7 +32,10 @@ public class PromocaoDAO implements DAO{
     public Promocao search(Integer id){
         conex.conexao();
         try{
-            conex.executa("select * from promocao where id='" +id+"'" );
+            if(id == -1){
+                return null;
+            }
+            conex.executa("select * from promocoes where id='" +id+"'" );
             conex.rs.first();
             if(conex.rs.getString("tipo").equals("xy")){
                 promocao = new PromocaoXporY(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("pague"));
