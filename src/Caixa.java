@@ -52,7 +52,6 @@ public class Caixa {
         BigDecimal total = BigDecimal.ZERO;
         BigDecimal retorno;
         for(Item i : itens){
-            System.out.println("quant: "+i.getQuantidade());
             discount = discount.add(i.getProduto().getPromo(i));
             total = total.add(i.getProduto().getValor().multiply(BigDecimal.valueOf(i.getQuantidade())));
         }
