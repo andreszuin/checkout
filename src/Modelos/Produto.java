@@ -61,6 +61,10 @@ public class Produto {
         return promo;
     }
 
+    public Promocao getPromocao(){
+        return promo.get(0);
+    }
+
     public void addPromo(Promocao promocao){
         promo.add(promocao);
     }

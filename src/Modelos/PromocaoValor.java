@@ -3,8 +3,9 @@ package Modelos;
 import java.math.BigDecimal;
 
 public class PromocaoValor implements Promocao {
-    private Integer quantidade,valorDesconto,id;
-    public PromocaoValor(Integer id, Integer quantidade, Integer valorDesconto){
+    private Integer quantidade,id;
+    private BigDecimal valorDesconto;
+    public PromocaoValor(Integer id, Integer quantidade, BigDecimal valorDesconto){
         this.quantidade =quantidade;
         this.id = id;
         this.valorDesconto = valorDesconto;
@@ -12,7 +13,7 @@ public class PromocaoValor implements Promocao {
     public BigDecimal desconto (Item i){
         BigDecimal desconto;
         Integer a = i.getQuantidade()/this.quantidade;
-        desconto = BigDecimal.valueOf(a).multiply((i.getProduto().getValor().multiply(BigDecimal.valueOf(quantidade))).subtract(BigDecimal.valueOf(valorDesconto)));
+        desconto = BigDecimal.valueOf(a).multiply((i.getProduto().getValor().multiply(BigDecimal.valueOf(quantidade))).subtract(valorDesconto));
         return desconto;
     }
 
@@ -29,11 +30,11 @@ public class PromocaoValor implements Promocao {
         this.quantidade = quantidade;
     }
 
-    public Integer getValorDesconto() {
+    public BigDecimal getValorDesconto() {
         return valorDesconto;
     }
 
-    public void setValorDesconto(Integer valorDesconto) {
+    public void setValorDesconto(BigDecimal valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 

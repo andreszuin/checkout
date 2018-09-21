@@ -8,6 +8,7 @@ import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 import java.io.IOException;
 import java.io.Reader;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 public class Csvreader {
@@ -32,7 +33,7 @@ public class Csvreader {
                     promocaoDAO.insert(xy);
                 }
                 else{
-                    PromocaoValor pv = new PromocaoValor(Integer.valueOf(id),Integer.valueOf(qtd_ativacao),Integer.valueOf(preco_final));
+                    PromocaoValor pv = new PromocaoValor(Integer.valueOf(id),Integer.valueOf(qtd_ativacao), BigDecimal.valueOf(Integer.valueOf(preco_final)));
                     promocaoDAO.insert(pv);
                 }
             }

@@ -3,6 +3,7 @@ package Processamento;
 import DAOS.ProdutoDAO;
 import DAOS.PromocaoDAO;
 import Modelos.Produto;
+import Modelos.Promocao;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -20,7 +21,12 @@ public class Regex {
             String participantName = matcher.group();
             Produto produto = new Produto(Integer.valueOf(matcher.group(1)),matcher.group(2), new BigDecimal(matcher.group(3)));
             PromocaoDAO promocaoDAO = new PromocaoDAO();
-            produto.addPromo(promocaoDAO.search(Integer.valueOf(matcher.group(4))));
+            if(matcher.group(4).equals("-1")){
+
+            }
+            else{
+                produto.addPromo(promocaoDAO.search(Integer.valueOf(matcher.group(4))));
+            }
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtoDAO.insert(produto);
         }

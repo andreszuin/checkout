@@ -8,10 +8,11 @@ public class Conecta {
     public ResultSet rs;
     private String driver = "org.postgresql.Driver";
     private String caminho = "jdbc:postgresql://localhost:5432/checkout";
+    private String caminhoP = "jdbc:postgresql://localhost:5432/postgres";
     private String usuario = "postgres";
     private String senha = "postgres";
     public Connection conn;
-    /**realiza a conexão com o banco de dados*/
+
     public void conexao(){
         try {
             System.setProperty("jdbc.Drivers",driver);
@@ -22,8 +23,18 @@ public class Conecta {
             System.exit(0);
         }
     }
-    /**executa strings de sql
-     * @param sql linha de sql*/
+
+    public void conexaoP(){
+        try {
+            System.setProperty("jdbc.Drivers",driver);
+            conn = DriverManager.getConnection(caminhoP, usuario, senha);
+            //JOptionPane.showMessageDialog(null,"conexão realizada com sucesso");
+        }catch (SQLException ex){
+            JOptionPane.showMessageDialog(null,"Erro Fatal ao conectar!\nInforme o seguinte erro ao suporte:\n"+ex,"Erro Fatal", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
+        }
+    }
+
     public void executa(String sql){
         try {
             stm = conn.createStatement(rs.TYPE_SCROLL_INSENSITIVE, rs.CONCUR_READ_ONLY);
@@ -33,7 +44,6 @@ public class Conecta {
 
         }
     }
-    /**finaliza a conexão com o banco de dados*/
     public void desconnect(){
         try {
             conn.close();

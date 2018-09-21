@@ -16,13 +16,13 @@ public class PromocaoDAO implements DAO{
         conex.conexao();
         ArrayList<Promocao> promos = new ArrayList<>();
         try{
-            conex.executa("select * from prodPromo INNER JOIN promocoes ON prodPromo.promocao = promocoes.id where prodpromo.idproduto='"+idprod+"'");
+            conex.executa("select * from prodPromo INNER JOIN promocoes ON prodPromo.idpromocao = promocoes.id where prodpromo.idproduto='"+idprod+"'");
             while(conex.rs.next()){
                 if(conex.rs.getString("tipo").equals("xy")){
                     promocao = new PromocaoXporY(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("pague"));
                 }
                 else{
-                    promocao = new PromocaoValor(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("valordesconto"));
+                    promocao = new PromocaoValor(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getBigDecimal("valordesconto"));
 
                 }
                 promos.add(promocao);
@@ -46,7 +46,7 @@ public class PromocaoDAO implements DAO{
                 promocao = new PromocaoXporY(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("pague"));
             }
             else{
-                promocao = new PromocaoValor(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getInt("valordesconto"));
+                promocao = new PromocaoValor(conex.rs.getInt("id"),conex.rs.getInt("quantidade"),conex.rs.getBigDecimal("valordesconto"));
             }
 
         }catch (SQLException ex){
@@ -71,7 +71,7 @@ public class PromocaoDAO implements DAO{
             else if(promocao instanceof PromocaoValor){
                 PreparedStatement pst = conex.conn.prepareStatement("update promocoes set quantidade=?,valordesconto=? where id=? ");
                 pst.setInt(1,((PromocaoValor)promocao).getQuantidade());
-                pst.setInt(2,((PromocaoValor)promocao).getValorDesconto());
+                pst.setBigDecimal(2,((PromocaoValor)promocao).getValorDesconto());
                 pst.setInt(3,((PromocaoValor)promocao).getId());
                 pst.execute();
             }
@@ -98,7 +98,7 @@ public class PromocaoDAO implements DAO{
             else if(promocao instanceof PromocaoValor){
                 PreparedStatement pst = conex.conn.prepareStatement("insert into promocoes(id,quantidade,valordesconto,tipo)values(?,?,?,?)");
                 pst.setInt(2,((PromocaoValor)promocao).getQuantidade());
-                pst.setInt(3,((PromocaoValor)promocao).getValorDesconto());
+                pst.setBigDecimal(3,((PromocaoValor)promocao).getValorDesconto());
                 pst.setInt(1,promocao.getId());
                 pst.setString(4,"vf");
                 pst.execute();

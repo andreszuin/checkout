@@ -1,3 +1,4 @@
+import DAOS.ProdutoDAO;
 import Modelos.Item;
 import Modelos.Produto;
 import Modelos.PromocaoValor;
@@ -7,39 +8,27 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Caixa {
-    private PromocaoValor prodA = new PromocaoValor(1,3,130);
-    private PromocaoValor prodB = new PromocaoValor(2,2,45);
-    private PromocaoXporY prodC = new PromocaoXporY(3,3,2);
-    private PromocaoXporY prodD = new PromocaoXporY(4,1,1);
     private Produto X = new Produto();
-    private Produto A = new Produto(1,"A", BigDecimal.valueOf(50));
-    private Produto B = new Produto(2,"B",BigDecimal.valueOf(30));
-    private Produto C = new Produto(3,"C",BigDecimal.valueOf(20));
-    private Produto D = new Produto(4,"D",BigDecimal.valueOf(15));
-
+    private ProdutoDAO produtoDAO = new ProdutoDAO();
     Caixa(){
-        A.addPromo(prodA);
-        B.addPromo(prodB);
-        C.addPromo(prodC);
-        D.addPromo(prodD);
+
     }
 
     ArrayList<Item> itens = new ArrayList<>();
 
-    public void add(String input){
-        X = teste(input);
+    public void add(Integer id){
+        X = produtoDAO.search(id);
         findAdd(X);
-
     }
 
-    public void remove(String input){
-        X = teste(input);
+    public void remove(Integer id){
+        X = produtoDAO.search(id);
         findDec(X);
     }
 
     public void findAdd(Produto prod){
         for(Item i : itens){
-            if(i.getProduto().equals(prod)){
+            if(i.getProduto().getId().equals(prod.getId())){
                 i.incQuantidade();
                 return;
             }
@@ -52,29 +41,10 @@ public class Caixa {
 
     public void findDec(Produto prod){
         for(Item i : itens){
-            if(i.getProduto().equals(prod)){
+            if(i.getProduto().getId().equals(prod.getId())){
                 i.decQuantidade();
             }
         }
-    }
-
-    public Produto teste(String input){
-        switch (input){
-            case "A":
-                X = A;
-                break;
-            case "B":
-                X = B;
-                break;
-            case "C":
-                X = C;
-                break;
-            case "D":
-                X = D;
-                break;
-                default:
-        }
-        return X;
     }
 
     public BigDecimal getTotalPrice(){
@@ -82,8 +52,9 @@ public class Caixa {
         BigDecimal total = BigDecimal.ZERO;
         BigDecimal retorno;
         for(Item i : itens){
-            discount.add(i.getProduto().getPromo(i));
-            total.add(i.getProduto().getValor().multiply(BigDecimal.valueOf(i.getQuantidade())));
+            System.out.println("quant: "+i.getQuantidade());
+            discount = discount.add(i.getProduto().getPromo(i));
+            total = total.add(i.getProduto().getValor().multiply(BigDecimal.valueOf(i.getQuantidade())));
         }
         retorno = total.subtract(discount);
         return retorno;
@@ -93,7 +64,7 @@ public class Caixa {
         BigDecimal discount = BigDecimal.ZERO;
         BigDecimal retorno;
         for(Item i : itens){
-             discount.add(i.getProduto().getPromo(i));
+             discount = discount.add(i.getProduto().getPromo(i));
         }
         retorno = discount;
         return retorno;

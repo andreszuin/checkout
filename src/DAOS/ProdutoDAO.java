@@ -7,14 +7,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProdutoDAO implements DAO{
-    Conecta conex = new Conecta();
-    Produto produto;
+    private Conecta conex = new Conecta();
+    private Produto produto;
+    private ProdPromoDAO pp = new ProdPromoDAO();
 
     public Produto search(Integer id) {
         conex.conexao();
         Produto prod = new Produto();
         try{
-            conex.executa("select * from produto where id='" +id+"'" );
+            conex.executa("select * from produto where id='"+id+"'" );
             conex.rs.first();
             prod.setId(conex.rs.getInt("id"));
             prod.setCodigo(conex.rs.getString("nome"));
@@ -56,7 +57,6 @@ public class ProdutoDAO implements DAO{
             pst.executeUpdate();
             ArrayList<Promocao> promo = produto.getPromolist();
             for(Promocao p : promo){
-                ProdPromoDAO pp = new ProdPromoDAO();
                 pp.insert(produto.getId(),p.getId());
             }
         }catch(SQLException ex){
