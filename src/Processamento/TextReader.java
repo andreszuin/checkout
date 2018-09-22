@@ -17,7 +17,6 @@ public class TextReader {
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(text);
         while(matcher.find()){
-            String participantName = matcher.group();
             Produto produto = new Produto(Integer.valueOf(matcher.group(1)),matcher.group(2), new BigDecimal(matcher.group(3)));
             PromocaoDAO promocaoDAO = new PromocaoDAO();
             if(matcher.group(4).equals("-1")){

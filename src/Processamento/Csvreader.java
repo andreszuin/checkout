@@ -22,7 +22,6 @@ public class Csvreader {
                         .withTrim());
         ){
             for (CSVRecord csvRecord : csvParser) {
-                // Accessing values by Header names
                 String id = csvRecord.get("id");
                 String qtd_ativacao = csvRecord.get("qtde_ativacao");
                 String preco_final = csvRecord.get("preco_final");
