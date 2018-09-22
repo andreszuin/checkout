@@ -72,4 +72,5 @@ public class Produto {
     public void setPromo(ArrayList<Promocao> promo) {
         this.promo = promo;
     }
+
 }

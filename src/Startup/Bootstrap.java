@@ -34,7 +34,7 @@ public class Bootstrap {
         Csvreader c = new Csvreader();
         c.read();
         TextReader r = new TextReader();
-        String teste = r.FiletoString("C:\\Users\\miner\\Documents\\checkout\\Arquivo_dados_checkout.txt");
+        String teste = r.FiletoString("src\\Docs\\Arquivo_dados_checkout.txt");
         String regex = "((?<=id: )\\d+(?=|))(?:.+)((?<=descricao: )\\w+(?=|))(?:.+)((?<=valor: )\\d+.\\d+(?=|))(?:.+)((?<=promocao: )\\-?\\d(?=|))";
         r.getResult(regex,teste);
     }

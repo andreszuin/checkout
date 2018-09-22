@@ -1,5 +1,7 @@
 package Modelos;
 
+import java.math.BigDecimal;
+
 public class Item {
     private Produto produto;
     private Integer quantidade = 0;
@@ -26,5 +28,17 @@ public class Item {
 
     public void decQuantidade(){
         this.quantidade--;
+    }
+
+    public BigDecimal getPromo(Item i){
+        return produto.getPromo(i);
+    }
+
+    public BigDecimal getTotal(){
+        return produto.getValor().multiply(BigDecimal.valueOf(quantidade));
+    }
+
+    public Integer getId(){
+        return produto.getId();
     }
 }

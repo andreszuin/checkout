@@ -56,8 +56,8 @@ public class PromocaoDAO implements DAO<Promocao>{
         conex.conexaoCheckout();
         try(PreparedStatement pst = conex.conn.prepareStatement("update promocoes set quantidade=?,valordesconto=?, pague=? where id=? ");){
             pst.setInt(1,(promocao.getQuantidade()));
-            pst.setBigDecimal(2,((PromocaoValor)promocao).getValorDesconto());
-            pst.setInt(3,((PromocaoXporY)promocao).getPague());
+            pst.setBigDecimal(2,(promocao.getValorDesconto()));
+            pst.setInt(3,(promocao.getPague()));
             pst.setInt(4,(promocao.getId()));
             pst.execute();
         }catch(Exception ex){
@@ -71,9 +71,9 @@ public class PromocaoDAO implements DAO<Promocao>{
         conex.conexaoCheckout();
         try(PreparedStatement pst = conex.conn.prepareStatement("insert into promocoes(id,quantidade,valordesconto,pague,tipo)values(?,?,?,?,?)");){
             pst.setInt(1,promocao.getId());
-            pst.setInt(2,(promocao.getQuantidade()));
-            pst.setBigDecimal(3,((PromocaoValor)promocao).getValorDesconto());
-            pst.setInt(4,((PromocaoXporY)promocao).getPague());
+            pst.setInt(2,promocao.getQuantidade());
+            pst.setBigDecimal(3,promocao.getValorDesconto());
+            pst.setInt(4,promocao.getPague());
             pst.setString(5,promocao.getType());
             pst.execute();
         }catch(Exception ex){

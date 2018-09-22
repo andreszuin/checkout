@@ -7,4 +7,6 @@ public interface Promocao {
     Integer getId();
     Integer getQuantidade();
     String getType();
+    Integer getPague();
+    BigDecimal getValorDesconto();
 }

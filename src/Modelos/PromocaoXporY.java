@@ -4,12 +4,15 @@ import java.math.BigDecimal;
 
 public class PromocaoXporY implements Promocao {
     private Integer quantidade, pague, id;
+    private String type;
 
     public PromocaoXporY(Integer id, Integer leve, Integer pague){
         this.quantidade = leve;
         this.id = id;
         this.pague = pague;
+        this.type = "xy";
     }
+
     public BigDecimal desconto (Item i){
         BigDecimal desconto;
         Integer a = i.getQuantidade()/quantidade;
@@ -34,11 +37,19 @@ public class PromocaoXporY implements Promocao {
         return pague;
     }
 
+    public BigDecimal getValorDesconto() {
+        return BigDecimal.ZERO;
+    }
+
     public void setPague(Integer pague) {
         this.pague = pague;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getType(){
+        return type;
     }
 }

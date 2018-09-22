@@ -5,10 +5,13 @@ import java.math.BigDecimal;
 public class PromocaoValor implements Promocao {
     private Integer quantidade,id;
     private BigDecimal valorDesconto;
+    private String type;
+
     public PromocaoValor(Integer id, Integer quantidade, BigDecimal valorDesconto){
         this.quantidade =quantidade;
         this.id = id;
         this.valorDesconto = valorDesconto;
+        this.type = "vf";
     }
     public BigDecimal desconto (Item i){
         BigDecimal desconto;
@@ -34,11 +37,19 @@ public class PromocaoValor implements Promocao {
         return valorDesconto;
     }
 
+    public Integer getPague(){
+        return 0;
+    }
+
     public void setValorDesconto(BigDecimal valorDesconto) {
         this.valorDesconto = valorDesconto;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getType(){
+        return type;
     }
 }

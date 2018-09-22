@@ -8,11 +8,7 @@ import java.util.ArrayList;
 public class Caixa {
     private Produto X = new Produto();
     private ProdutoDAO produtoDAO = new ProdutoDAO();
-    Caixa(){
-
-    }
-
-    ArrayList<Item> itens = new ArrayList<>();
+    private ArrayList<Item> itens = new ArrayList<>();
 
     public void add(Integer id){
         X = produtoDAO.get(id);
@@ -26,7 +22,7 @@ public class Caixa {
 
     public void findAdd(Produto prod){
         for(Item i : itens){
-            if(i.getProduto().getId().equals(prod.getId())){
+            if(i.getId().equals(prod.getId())){
                 i.incQuantidade();
                 return;
             }
@@ -39,7 +35,7 @@ public class Caixa {
 
     public void findDec(Produto prod){
         for(Item i : itens){
-            if(i.getProduto().getId().equals(prod.getId())){
+            if(i.getId().equals(prod.getId())){
                 i.decQuantidade();
             }
         }
@@ -48,22 +44,19 @@ public class Caixa {
     public BigDecimal getTotalPrice(){
         BigDecimal discount = BigDecimal.ZERO;
         BigDecimal total = BigDecimal.ZERO;
-        BigDecimal retorno;
         for(Item i : itens){
-            discount = discount.add(i.getProduto().getPromo(i));
-            total = total.add(i.getProduto().getValor().multiply(BigDecimal.valueOf(i.getQuantidade())));
+            discount = discount.add(i.getPromo(i));
+            total = total.add(i.getTotal());
         }
-        retorno = total.subtract(discount);
-        return retorno;
+
+        return total.subtract(discount);
     }
 
     public BigDecimal getTotalDiscount(){
         BigDecimal discount = BigDecimal.ZERO;
-        BigDecimal retorno;
         for(Item i : itens){
-             discount = discount.add(i.getProduto().getPromo(i));
+             discount = discount.add(i.getPromo(i));
         }
-        retorno = discount;
-        return retorno;
+        return discount;
     }
 }

@@ -8,7 +8,6 @@ import java.util.ArrayList;
 
 public class ProdutoDAO implements DAO<Produto>{
     private Conecta conex = new Conecta();
-    private Produto produto;
     private ProdPromoDAO pp = new ProdPromoDAO();
 
     public Produto get(Integer id) {

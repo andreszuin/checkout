@@ -15,7 +15,7 @@ public class Csvreader {
     public void read()throws IOException{
         PromocaoDAO promocaoDAO = new PromocaoDAO();
         try (
-                Reader reader = Files.newBufferedReader(Paths.get("C:\\Users\\miner\\Documents\\checkout\\promoções.csv"));
+                Reader reader = Files.newBufferedReader(Paths.get("src\\Docs\\promoções.csv"));
                 CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT
                         .withFirstRecordAsHeader()
                         .withIgnoreHeaderCase()
