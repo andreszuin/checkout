@@ -3,7 +3,6 @@ package Processamento;
 import DAOS.ProdutoDAO;
 import DAOS.PromocaoDAO;
 import Modelos.Produto;
-import Modelos.Promocao;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Regex {
+public class TextReader {
 
     public void getResult(String regex, String text){
         Pattern pattern = Pattern.compile(regex);
@@ -25,7 +24,7 @@ public class Regex {
 
             }
             else{
-                produto.addPromo(promocaoDAO.search(Integer.valueOf(matcher.group(4))));
+                produto.addPromo(promocaoDAO.get(Integer.valueOf(matcher.group(4))));
             }
             ProdutoDAO produtoDAO = new ProdutoDAO();
             produtoDAO.insert(produto);

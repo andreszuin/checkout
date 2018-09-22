@@ -1,8 +1,6 @@
 import DAOS.ProdutoDAO;
 import Modelos.Item;
 import Modelos.Produto;
-import Modelos.PromocaoValor;
-import Modelos.PromocaoXporY;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -17,12 +15,12 @@ public class Caixa {
     ArrayList<Item> itens = new ArrayList<>();
 
     public void add(Integer id){
-        X = produtoDAO.search(id);
+        X = produtoDAO.get(id);
         findAdd(X);
     }
 
     public void remove(Integer id){
-        X = produtoDAO.search(id);
+        X = produtoDAO.get(id);
         findDec(X);
     }
 

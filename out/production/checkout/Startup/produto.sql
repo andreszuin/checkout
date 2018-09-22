@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS produto(
+  id    INTEGER PRIMARY KEY NOT NULL ,
+  nome  CHARACTER VARYING(15) NOT NULL,
+  valor NUMERIC               NOT NULL,
+  UNIQUE (nome)
+);
