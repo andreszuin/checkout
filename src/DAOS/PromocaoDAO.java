@@ -2,9 +2,7 @@ package DAOS;
 
 import Modelos.*;
 
-import javax.swing.*;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PromocaoDAO implements DAO<Promocao>{
@@ -88,8 +86,8 @@ public class PromocaoDAO implements DAO<Promocao>{
         try(PreparedStatement pst = conex.conn.prepareStatement("delete from promocoes where id=?");) {
             pst.setInt(1,promocao.getId());
             pst.execute();
-        }catch(SQLException ex){
-            JOptionPane.showMessageDialog(null,"Erro ao excluir dados\nInforme o seguinte erro ao suporte:\n"+ex, "Erro", JOptionPane.ERROR_MESSAGE);
+        }catch(Exception ex){
+            ex.printStackTrace();
         }
         conex.desconnect();
     }

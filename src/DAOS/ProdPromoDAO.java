@@ -1,10 +1,8 @@
 package DAOS;
-import javax.swing.*;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 public class ProdPromoDAO {
-    Conecta conex = new Conecta();
+    private Conecta conex = new Conecta();
     public void insert(Integer idprod, Integer idpromo){
         conex.conexaoCheckout();
         try(PreparedStatement pst = conex.conn.prepareStatement("insert into prodPromo(idproduto,idpromocao)values(?,?)");){

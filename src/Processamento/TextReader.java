@@ -30,17 +30,6 @@ public class TextReader {
         }
     }
 
-    /*public List<String> getResult(String regex, String text){
-        List<String> lista = new ArrayList<>();
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(text);
-        while(matcher.find()){
-            String participantName = matcher.group();
-            lista.add(participantName);
-        }
-        return lista;
-    }*/
-
     public String FiletoString(String path) throws IOException{
         File texto = new File(path);
         byte[] bytes = new byte[(int) texto.length()];

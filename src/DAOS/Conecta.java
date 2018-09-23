@@ -1,6 +1,5 @@
 package DAOS;
 
-import javax.swing.*;
 import java.sql.*;
 
 public class Conecta {

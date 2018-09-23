@@ -1,5 +1,4 @@
 package Processamento;
-import Modelos.*;
 import DAOS.PromocaoDAO;
 import Modelos.PromocaoValor;
 import Modelos.PromocaoXporY;

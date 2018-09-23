@@ -1,9 +1,7 @@
 package DAOS;
 import Modelos.*;
 
-import javax.swing.*;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProdutoDAO implements DAO<Produto>{
