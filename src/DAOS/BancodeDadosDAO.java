@@ -7,7 +7,6 @@ import java.sql.PreparedStatement;
 public class BancodeDadosDAO {
     private Conecta conex = new Conecta();
     private TextReader tx = new TextReader();
-
     public void criarBd(){
         conex.conexaoPostgres();
         try(PreparedStatement pst = conex.conn.prepareStatement(tx.FiletoString("src\\Docs\\database.sql"));){
