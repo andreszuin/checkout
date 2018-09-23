@@ -6,18 +6,15 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Caixa {
-    private Produto X = new Produto();
     private ProdutoDAO produtoDAO = new ProdutoDAO();
     private ArrayList<Item> itens = new ArrayList<>();
 
     public void add(Integer id){
-        X = produtoDAO.get(id);
-        findAdd(X);
+        findAdd(produtoDAO.get(id));
     }
 
     public void remove(Integer id){
-        X = produtoDAO.get(id);
-        findDec(X);
+        findDec(produtoDAO.get(id));
     }
 
     public void findAdd(Produto prod){
@@ -35,8 +32,12 @@ public class Caixa {
 
     public void findDec(Produto prod){
         for(Item i : itens){
+            if(i.getQuantidade().equals(0)){
+                return;
+            }
             if(i.getId().equals(prod.getId())){
                 i.decQuantidade();
+                return;
             }
         }
     }

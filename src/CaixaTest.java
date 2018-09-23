@@ -127,4 +127,14 @@ public class CaixaTest {
         assertEquals(caixa.getTotalPrice().equals(BigDecimal.valueOf(193.06210984).setScale(8)),true);
         assertEquals(caixa.getTotalDiscount().equals(BigDecimal.ZERO),true);
     }
+
+    @Test
+    public void teste9(){
+        caixa.add(16);
+        caixa.add(16);
+        caixa.remove(16);
+        caixa.remove(16);
+        caixa.remove(16);
+    }
+
 }
