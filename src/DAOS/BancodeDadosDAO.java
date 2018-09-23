@@ -5,10 +5,11 @@ import Processamento.TextReader;
 import java.sql.PreparedStatement;
 
 public class BancodeDadosDAO {
-    Conecta conex = new Conecta();
+    private Conecta conex = new Conecta();
+    private TextReader tx = new TextReader();
+
     public void criarBd(){
         conex.conexaoPostgres();
-        TextReader tx = new TextReader();
         try(PreparedStatement pst = conex.conn.prepareStatement(tx.FiletoString("src\\Docs\\database.sql"));){
             pst.execute();
         }catch(Exception ex){
