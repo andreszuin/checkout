@@ -1,35 +1,17 @@
 package Startup;
 
-import DAOS.Conecta;
+import DAOS.BancodeDadosDAO;
 import Processamento.Csvreader;
 import Processamento.TextReader;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
 
 public class Bootstrap {
-    Conecta conex = new Conecta();
-    public void criarBd(){
-        conex.conexaoPostgres();
-        TextReader tx = new TextReader();
-        try(PreparedStatement pst = conex.conn.prepareStatement(tx.FiletoString("src\\Startup\\database.sql"));){
-            pst.execute();
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        conex.desconnect();
+    public void criar(){
+        BancodeDadosDAO bancodeDadosDAO = new BancodeDadosDAO();
+        bancodeDadosDAO.criarBd();
+        bancodeDadosDAO.criarTabelas();
     }
-    public void criarTabelas(){
-        conex.conexaoCheckout();
-        TextReader tx = new TextReader();
-        try(PreparedStatement pst = conex.conn.prepareStatement(tx.FiletoString("src\\Startup\\esquema.sql"));){
-            pst.execute();
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
-        conex.desconnect();
-    }
-
     public void preencher() throws IOException {
         Csvreader c = new Csvreader();
         c.read();
